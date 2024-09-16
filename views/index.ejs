@@ -1,2 +1,25 @@
-<%- include 'partials/header.ejs' %>
-<%- include 'partials/footer.ejs' %>
+<%- include ('partials/header.ejs') %>
+<main>
+	<div id="home-info">
+		<div id="home-image-con">
+			<img src="/static/resources/logo-no-background.svg" class="page-logo" />
+		</div>
+		<div class="line vertical"></div>
+		<div id="home-text">
+			<h3>Organize your brain</h3>
+			<p>
+				Do you find yourself wanting to do something and then later on forget it
+				?<br />
+				You find a mildly interesting topic that you want to explore later but
+				can't muster it up later ?<br />
+				Well now you can write your intrusive thoughts
+				<i class="fa-solid fa-comments" style="color: #ffffff"></i> when you
+				have them, put them in blocks
+				<i class="fa-solid fa-cubes" style="color: #ffffff"></i> then check back
+				on them later.
+			</p>
+			<a href="/thoughts" class="nav-link">Start Creating Them</a>
+		</div>
+	</div>
+</main>
+<%- include ('partials/footer.ejs') %>
