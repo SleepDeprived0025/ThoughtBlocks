@@ -2,14 +2,29 @@
 
 <main id="thought-main">
 	<div id="function-con">
-		<div  class="breaker-div"></div>
-			<div id="button-con">
+		<div class="breaker-div"></div>
+		<div id="button-con">
 			<a href="/create#thought-form"
 				><button id="create-button">Create</button></a
 			>
 			<button id="sort-button">Sort</button>
 		</div>
-        <div class="breaker-div"></div>
+		<div class="breaker-div"></div>
+	</div>
+	<div id="post-con">
+		<% if (locals.thoughts.length > 0) {%> <% for (thought of locals.thoughts)
+		{%>
+		<div class="thought-con importance-<%=thought.importance%>">
+			<h3><%=thought.title%></h3>
+			<p><%=thought.content%></p>
+			<div class="button-con"> 
+				<button class="view post-btn">View</button>
+				<button class="edit post-btn">Edit</button>
+			</div>
+		</div>
+		<%}%><%} else {%>
+		<h2>Head empty, no thought</h2>
+		<%}%>
 	</div>
 </main>
 

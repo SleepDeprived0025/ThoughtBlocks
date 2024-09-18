@@ -1,4 +1,4 @@
-![ThoughtBlocks Logo](public/resources/logo-no-background.svg)
+﻿# [ThoughtBlocks Logo](public/resources/logo-no-background.svg)
 
 A place to organize your thoughts 💭 in blocks 🧱
 
