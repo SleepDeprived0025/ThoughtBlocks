@@ -5,21 +5,21 @@
 		<div class="breaker-div"></div>
 		<div id="button-con">
 			<a href="/create#thought-form"
-				><button id="create-button">Create</button></a
+				><button id="create-button">Create <i class="fa-solid fa-pen fa-sm" style="color: var(--primary);"></i></button></a
 			>
-			<button id="sort-button">Sort</button>
+			<button id="sort-button">Sort <i class="fa-solid fa-filter fa-sm" style="color: var(--primary);"></i></button>
 		</div>
 		<div class="breaker-div"></div>
 	</div>
 	<div id="post-con">
 		<% if (locals.thoughts.length > 0) {%> <% for (thought of locals.thoughts)
 		{%>
-		<div class="thought-con importance-<%=thought.importance%>">
+		<div class="thought-con length-<%=Math.floor(Math.random() * 3) + 1;%>">
 			<h3><%=thought.title%></h3>
 			<p><%=thought.content%></p>
 			<div class="button-con"> 
-				<button class="view post-btn">View</button>
-				<button class="edit post-btn">Edit</button>
+				<button class="view post-btn">Edit</button>
+				<button class="edit post-btn">View</button>
 			</div>
 		</div>
 		<%}%><%} else {%>

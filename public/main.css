@@ -1,5 +1,11 @@
+:root {
+	--background: #333366;
+	--primary: #ffff33;
+	--accent1: #55679C;
+}
+
 * {
-	font-family: "Amatic SC", sans-serif;
+	font-family: "Advent Pro", sans-serif;
 	/* border: 1px solid black; */
 	box-sizing: border-box;
 }
@@ -18,6 +24,34 @@
 	}
 }
 
+@keyframes buttonShake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
+	}
+}
+
 body {
 	margin: 0;
 	border: 0;
@@ -30,9 +64,9 @@ body {
 
 /* TODO: HEADER AREA */
 #header-nav-bar {
-	background-color: #e56815;
+	background-color: var(--background);
 	width: 100%;
-	height: 50px;
+	height: 65px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -53,7 +87,7 @@ body {
 }
 
 #nav-con {
-	width: 50%;
+	width: 35%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -76,7 +110,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: #e56815;
+	background-color: var(--background);
 	height: 20px;
 	display: flex;
 	justify-content: center;
@@ -102,7 +136,7 @@ footer {
 	align-items: center;
 	width: 100%;
 	margin-top: 175px;
-	background-color: #e56815;
+	background-color: var(--background);
 	height: 600px;
 }
 
@@ -144,17 +178,24 @@ footer {
 
 #home-text h3 {
 	font-size: 2.78rem;
-	border-radius: 25%;
-	border: dotted white 5px;
-	padding: 10px;
+	border-radius: 30px;
+	border: dotted var(--primary) 5px;
+	padding: 20px;
 }
 
 #home-text p {
 	font-size: 2rem;
+	margin-block-start: 0 !important;
+	margin-bottom: 1em;
 }
 
-#home-text .nav-link {
-	border-bottom: double 3px white;
+#home-text > a {
+	border: double 3px var(--primary);
+	padding: 10px;
+}
+
+#home-text > a:hover {
+	animation: buttonShake 0.75s ease-in-out 0s 1 normal forwards !important;
 }
 
 /* ## TODO: THOUGHT MAIN */
@@ -190,20 +231,21 @@ footer {
 	font-size: 1.5rem;
 	margin-right: 2rem;
 	border: 0;
-	outline: 3px dashed #e56815;
+	outline: 3px dashed var(--background);
 	transition: font-weight 75ms ease 0s, font-size 75ms ease 0s,
-		outline 75ms ease 0s;
+		outline 125ms ease 0s;
 	background-color: white;
 	padding: 10px;
-	color: #e56815;
+	color: #fff;
+	background-color: var(--accent1);
 	border-radius: 25px;
 }
 
 #create-button:hover,
 #sort-button:hover {
-	outline: 6px dashed #e56815;
+	outline: 6px dashed var(--background);
 	font-size: 1.75rem;
-	font-weight: 900;
+	font-weight: 600;
 }
 
 #create-button,
@@ -221,14 +263,28 @@ footer {
 
 #post-con {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
 	grid-auto-columns: auto;
 	grid-auto-rows: auto;
 	grid-gap: 20px;
 	width: 75%;
 	height: 50%;
+	margin-top: 10px;
 }
+
+.length-3{
+	grid-column: span 3;
+}
+
+.length-2{
+	grid-column: span 2;
+}
+
+.length-1{
+	grid-column: span 1;
+}
+
 
 .thought-con > p,
 .thought-con > h3,
@@ -237,37 +293,50 @@ footer {
 }
 
 .thought-con {
-	border: 3px solid black;
-	border-radius: 20px;
+	border: 3px solid var(--background)	;
 	height: 200px;
+	background-color: var(--accent1);
+	color: aliceblue;
+	border-radius: 5px;
 }
 .thought-con > h3 {
-	border-bottom: 2px solid black;
-	height: 40px;
-	width: 100%;
 	text-align: center;
+	height: 50px;
+	width: 100%;
+	margin-block-start: 20px !important;
+	margin-block-end: 0 !important;
+	text-overflow: clip;
+	overflow: hidden;
+	border-bottom: 2px solid black;
 }
 .thought-con > p {
 	width: 100%;
-	max-height: 100px;
+	height: 90px;
 	text-overflow: clip;
 	padding: 2px 5px;
+	border-bottom: 2px solid black;
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
+	overflow: auto;
 }
 .thought-con > .button-con {
 	height: 40px;
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-end;
 	align-items: center;
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
 }
 
 .post-btn {
-    border: none;
-    background-color: white;
+	border: none;
+	background-color: white;
 	min-height: 25px;
 	transition: border 100ms ease-in-out;
+	margin: 5px;
 }
 
-.post-btn:hover{
-    border: double 2px black;
+.post-btn:hover {
+	border: double 2px black;
 }

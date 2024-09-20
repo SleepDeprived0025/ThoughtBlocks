@@ -10,11 +10,15 @@ app.use('/static', express.static('public'));
 const thoughtArr = [{
     "title": "Welcome to your thoughts",
     "content": "create yours here by pressing the orange 'Create' button or edit existing ones",
-    "importance": 3,
+    "id": 1,
 },{
     "title": "Hello",
     "content": "World",
-    "importance": 2,
+    "id": 2,
+},{
+    "title": "Lorem Ipsum",
+    "content": "Dolor sit amet, consectetur adipiscing elit. Etiam consequat molestie orci, scelerisque eleifend enim pretium vel. Ut malesuada cursus. ",
+    "id": 3,
 }];
 
 app.get("/", (req, res) => {
