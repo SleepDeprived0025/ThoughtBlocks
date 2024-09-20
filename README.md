@@ -1,4 +1,4 @@
-﻿![ThoughtBlocks Logo](public/resources/logo-no-background.svg)
+﻿![ThoughtBlocks Logo](public/resources/logo-no-background.png)
 
 A place to share your thoughts 💭 with others in blocks 🧱
 
