@@ -1,7 +1,7 @@
 :root {
 	--background: #333366;
 	--primary: #ffff33;
-	--accent1: #55679C;
+	--accent1: #55679c;
 }
 
 * {
@@ -228,10 +228,10 @@ footer {
 
 #create-button,
 #sort-button {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	margin-right: 2rem;
 	border: 0;
-	outline: 3px dashed var(--background);
+	outline: 3px thick var(--background);
 	transition: font-weight 75ms ease 0s, font-size 75ms ease 0s,
 		outline 125ms ease 0s;
 	background-color: white;
@@ -243,8 +243,8 @@ footer {
 
 #create-button:hover,
 #sort-button:hover {
-	outline: 6px dashed var(--background);
-	font-size: 1.75rem;
+	outline: 6px ridge var(--background);
+	font-size: 1.5rem;
 	font-weight: 600;
 }
 
@@ -273,18 +273,17 @@ footer {
 	margin-top: 10px;
 }
 
-.length-3{
+.length-3 {
 	grid-column: span 3;
 }
 
-.length-2{
+.length-2 {
 	grid-column: span 2;
 }
 
-.length-1{
+.length-1 {
 	grid-column: span 1;
 }
-
 
 .thought-con > p,
 .thought-con > h3,
@@ -293,8 +292,8 @@ footer {
 }
 
 .thought-con {
-	border: 3px solid var(--background)	;
-	height: 200px;
+	border: 3px solid var(--background);
+	height: 220px;
 	background-color: var(--accent1);
 	color: aliceblue;
 	border-radius: 5px;
@@ -320,7 +319,7 @@ footer {
 	overflow: auto;
 }
 .thought-con > .button-con {
-	height: 40px;
+	height: 50px;
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
@@ -331,12 +330,75 @@ footer {
 
 .post-btn {
 	border: none;
-	background-color: white;
+	background-color: var(--accent1);
+	color: var(--primary);
 	min-height: 25px;
-	transition: border 100ms ease-in-out;
+	text-shadow: none;
+	transition: text-shadow 100ms ease-in-out, text-decoration 100ms ease-in-out;
 	margin: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: medium;
 }
 
 .post-btn:hover {
-	border: double 2px black;
+	text-decoration: underline;
+	text-shadow: 0 0 6px var(--primary);
+}
+
+/* TODO: CREATE MAIN */
+
+#create-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	margin: 100px 0 0 0;
+}
+
+/* TODO: CREATE FORM */
+
+#thought-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 80vw;
+	height: 70vh;
+	margin: 100px 0 0 0;
+}
+
+#form-con {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+#title-input,
+#content-input {
+	width: 1000px;
+	margin: 10px 0;
+}
+
+#title-input {
+	height: 50px;
+	font-size: x-large;
+	padding-left: 10px;
+}
+
+#content-input {
+	height: 450px;
+	margin-bottom: 20px;
+	font-size: large;
+	padding: 10px;
+}
+
+#thought-form > #form-con > .button-con > {
+	align-items: center !important;
+	justify-content: center !important;
 }

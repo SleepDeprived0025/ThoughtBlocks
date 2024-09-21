@@ -9,7 +9,7 @@ app.use('/static', express.static('public'));
 
 const thoughtArr = [{
     "title": "Welcome to your thoughts",
-    "content": "create yours here by pressing the orange 'Create' button or edit existing ones",
+    "content": "create yours here by pressing the 'Create' button or edit existing ones",
     "id": 1,
 },{
     "title": "Hello",
@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
 
 app.get("/thoughts", (req, res) => {
     res.render("thought.ejs", { "thoughts": thoughtArr });
+})
+
+app.get("/create", (req, res) => {
+    res.render("create.ejs");
 })
 
 app.listen(port, (req,res) => {
