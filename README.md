@@ -5,15 +5,18 @@ A place to share your thoughts 💭 with others in blocks 🧱
 This is being built with [Express](https://expressjs.com/) and [EJS](https://ejs.co/#about).
 You can view it by downloading the project and hosting it locally with something like [nodemon](https://www.npmjs.com/package/nodemon).
 
-## Update as of 21.09.2024
+## Update as of 22.09.2024
 
-- Added create page
-- Fixed post's buttons styling
+- Added function to create post
 
 ## Functionality to be made ⬇
 
-- Creating posts (thoughts) ❌
+- Creating posts (thoughts) ✔
 - Viewing posts (blocks) ❌
 - Randomize how long a post it ✔
 - Deleting posts ❌
-- Sort posts by time created
+- Sort posts by time created ❌
+
+## Current Predicament
+
+- Unsure how to send data from post

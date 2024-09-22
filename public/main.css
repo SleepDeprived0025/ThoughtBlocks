@@ -333,6 +333,7 @@ footer {
 	background-color: var(--accent1);
 	color: var(--primary);
 	min-height: 25px;
+	text-decoration: none;
 	text-shadow: none;
 	transition: text-shadow 100ms ease-in-out, text-decoration 100ms ease-in-out;
 	margin: 5px;
@@ -343,7 +344,7 @@ footer {
 
 .post-btn:hover {
 	text-decoration: underline;
-	text-shadow: 0 0 6px var(--primary);
+	text-shadow: 0 0 8px var(--primary);
 }
 
 /* TODO: CREATE MAIN */
@@ -366,7 +367,7 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	width: 80vw;
-	height: 70vh;
+	height: 60vh;
 	margin: 100px 0 0 0;
 }
 
@@ -377,6 +378,10 @@ footer {
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
+}
+
+.form-label {
+	font-size: xx-large;
 }
 
 #title-input,
