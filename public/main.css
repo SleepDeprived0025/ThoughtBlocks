@@ -382,10 +382,12 @@ footer {
 
 .form-label {
 	font-size: xx-large;
+	font-family: "Inria Sans", sans-serif !important;
 }
 
 #title-input,
 #content-input {
+	font-family: "Inria Sans", sans-serif !important;
 	width: 1000px;
 	margin: 10px 0;
 }

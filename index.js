@@ -15,11 +15,16 @@ const findPost = (id) => {
 	}
 };
 
+function handleViewClick(event) {
+	let id = event.target;
+	console.log(id);
+}
+
 const thoughtArr = [
 	{
-		title: "Welcome to your thoughts",
+		title: "Welcome to Thoughtblocks",
 		content:
-			"create yours here by pressing the 'Create' button or edit existing ones",
+			"A place where you can express the way you think",
 		id: 1,
 	},
 	{
@@ -53,12 +58,12 @@ app.post("/create", (req, res) => {
 		content: req.body.content,
 		id: thoughtArr[thoughtArr.length - 1].id + 1,
 	});
-	console.log(thoughtArr);
 	res.redirect("/thoughts");
 });
 
 app.post("/edit", (req, res) => {
 	console.log(req.body);
+	res.re
 });
 
 app.listen(port, (req, res) => {

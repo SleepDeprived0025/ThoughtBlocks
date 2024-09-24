@@ -3,12 +3,13 @@
 	<form action="/create" method="POST" id="thought-form">
 		<div id="form-con">
             <label class="form-label" for="title-input">Title</label>
-			<input type="text" name="title" placeholder="....." id="title-input" />
+			<input type="text" min-length="8" name="title" placeholder="....." id="title-input"/>
             <label class="form-label" for="content-input">Content</label>
 			<textarea
 				name="content"
 				placeholder="....."
 				id="content-input"
+				minlength="10"
 			></textarea>
 		</div>
 		<div class="button-con">

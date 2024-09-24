@@ -26,8 +26,20 @@
 			<h3><%=thought.title%></h3>
 			<p><%=thought.content%></p>
 			<div class="button-con">
-				<button class="view post-btn" href="/view">EDIT</button>
-				<button class="edit post-btn" href="/edit">VIEW</button>
+				<button
+					class="edit post-btn"
+					data-id="<%=thought.id%>"
+					onclick="handleViewClick(event)"
+				>
+					VIEW
+				</button>
+				<button
+					class="view post-btn"
+					data-id="<%=thought.id%>"
+					onclick="handleEditClick(event)"
+				>
+					EDIT
+				</button>
 			</div>
 		</div>
 		<%}%><%} else {%>
@@ -35,5 +47,9 @@
 		<%}%>
 	</div>
 </main>
-
+<script type="text/javascript">
+	function handleViewClick(event) {
+		let id = event.target.dataset.id;
+	}
+</script>
 <%- include("partials/footer.ejs") %>
