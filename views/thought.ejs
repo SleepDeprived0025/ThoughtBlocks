@@ -50,6 +50,11 @@
 <script type="text/javascript">
 	function handleViewClick(event) {
 		let id = event.target.dataset.id;
+		console.log(`current post's ID is: ${id}`);
+		const sendPostID = fetch(`/view`, {
+			method: "POST",
+			body:{ postId: id },
+		})
 	}
 </script>
 <%- include("partials/footer.ejs") %>

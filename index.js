@@ -61,9 +61,8 @@ app.post("/create", (req, res) => {
 	res.redirect("/thoughts");
 });
 
-app.post("/edit", (req, res) => {
+app.post("/view", (req, res) => {
 	console.log(req.body);
-	res.re
 });
 
 app.listen(port, (req, res) => {
