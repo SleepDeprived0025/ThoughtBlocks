@@ -62,7 +62,7 @@ app.post("/create", (req, res) => {
 });
 
 app.post("/view", (req, res) => {
-	console.log(req.body);
+	console.log(req);
 });
 
 app.listen(port, (req, res) => {

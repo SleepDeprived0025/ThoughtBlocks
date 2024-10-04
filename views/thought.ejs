@@ -26,20 +26,12 @@
 			<h3><%=thought.title%></h3>
 			<p><%=thought.content%></p>
 			<div class="button-con">
-				<button
-					class="edit post-btn"
-					data-id="<%=thought.id%>"
-					onclick="handleViewClick(event)"
-				>
-					VIEW
-				</button>
-				<button
-					class="view post-btn"
-					data-id="<%=thought.id%>"
-					onclick="handleEditClick(event)"
-				>
-					EDIT
-				</button>
+				<form action="/edit" method="POST" id="edit-form">
+					<button type="submit" value="<%=thought.id%>">Edit</button>
+				</form>
+				<form action="/view" method="POST" id="view-form">
+					<button type="submit" value="<%=thought.id%>">view</button>
+				</form>
 			</div>
 		</div>
 		<%}%><%} else {%>
@@ -47,14 +39,4 @@
 		<%}%>
 	</div>
 </main>
-<script type="text/javascript">
-	function handleViewClick(event) {
-		let id = event.target.dataset.id;
-		console.log(`current post's ID is: ${id}`);
-		const sendPostID = fetch(`/view`, {
-			method: "POST",
-			body:{ postId: id },
-		})
-	}
-</script>
 <%- include("partials/footer.ejs") %>
