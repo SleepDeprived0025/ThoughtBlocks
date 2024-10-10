@@ -26,11 +26,8 @@
 			<h3><%=thought.title%></h3>
 			<p><%=thought.content%></p>
 			<div class="button-con">
-				<form action="/edit" method="POST" id="edit-form">
-					<button type="submit" value="<%=thought.id%>">Edit</button>
-				</form>
 				<form action="/view" method="POST" id="view-form">
-					<button type="submit" value="<%=thought.id%>">view</button>
+					<button class="post-btn" type="submit" name="id" value="<%=thought.id%>">VIEW POST</button>
 				</form>
 			</div>
 		</div>

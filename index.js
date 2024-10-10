@@ -62,7 +62,14 @@ app.post("/create", (req, res) => {
 });
 
 app.post("/view", (req, res) => {
-	console.log(req);
+	const targetPost = findPost(req.body.id);
+	console.log(targetPost);
+	res.render("view.ejs", { thought: targetPost });
+});
+
+app.post("/edit", (req, res) => {
+	const targetPost = findPost(req.body.id);
+	console.log(targetPost);
 });
 
 app.listen(port, (req, res) => {

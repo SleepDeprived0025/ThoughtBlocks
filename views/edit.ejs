@@ -1,1 +1,12 @@
-< <%- include ('partials/header.ejs') %> <%- include ('partials/footer.ejs') %>
+<%- include ('partials/header.ejs') %>
+<main>
+	<form>
+		<h1>Edit</h1>
+		<input type="text" name="title" value="<%=locals.thought.title%>" />
+		<textarea name="content" id="content-input" cols="30" rows="10">
+<%=locals.thought.content%></textarea
+		>
+		<input type="submit" value="Edit" />Edit
+	</form>
+</main>
+<%- include ('partials/footer.ejs') %>

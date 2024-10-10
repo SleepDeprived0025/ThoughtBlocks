@@ -1,0 +1,17 @@
+<%- include ('partials/header.ejs') %>
+<main id="view-main">
+	<div id="view-con">
+		<h1><%=locals.thought.title%></h3>
+		<p><%=locals.thought.content%></p>
+	</div>
+    <div class="button-con">
+        <form action="/edit" method="POST" id="edit-form">
+            <button type="submit" name="id" value="<%=locals.thought.id%>">Edit</button>
+        </form>
+        <form action="/delete" method="POST" id="delete-form">
+            <button type="submit" name="id" value="<%=locals.thought.id%>">Delete</button>
+        </form>
+        <a href="/thoughts"><button>Back</button></a>
+    </div>
+</main>
+<%- include ('partials/footer.ejs') %>
