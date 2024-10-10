@@ -1,12 +1,29 @@
 <%- include ('partials/header.ejs') %>
-<main>
-	<form>
-		<h1>Edit</h1>
-		<input type="text" name="title" value="<%=locals.thought.title%>" />
-		<textarea name="content" id="content-input" cols="30" rows="10">
-<%=locals.thought.content%></textarea
-		>
-		<input type="submit" value="Edit" />Edit
+<main id="edit-main">
+	<form action="/edit-post" method="POST" id="thought-edit-form">
+		<div id="edit-form-con">
+			<label class="form-label" for="title-edit-input">Title</label>
+			<input
+				type="text"
+				min-length="8"
+				name="title"
+				placeholder="....."
+				id="title-edit-input"
+				value="<%=locals.thought.title%>"
+			/>
+			<label class="form-label" for="content-edit-input">Content</label>
+			<textarea
+				name="content"
+				placeholder="....."
+				id="content-input"
+				minlength="10"
+			>
+<%= locals.thought.content%></textarea
+			>
+		</div>
+		<div class="button-con">
+			<input type="submit" value="EDIT" id="edit-post-button" />
+		</div>
 	</form>
 </main>
 <%- include ('partials/footer.ejs') %>

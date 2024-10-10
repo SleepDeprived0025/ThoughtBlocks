@@ -70,6 +70,7 @@ app.post("/view", (req, res) => {
 app.post("/edit", (req, res) => {
 	const targetPost = findPost(req.body.id);
 	console.log(targetPost);
+	res.render("edit.ejs", { thought: targetPost });
 });
 
 app.listen(port, (req, res) => {

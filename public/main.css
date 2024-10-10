@@ -349,19 +349,21 @@ footer {
 
 /* TODO: CREATE MAIN */
 
-#create-main {
+#create-main,
+#edit-main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	margin: 100px 0 0 0;
+	margin: 0;
 }
 
 /* TODO: CREATE FORM */
 
-#thought-form {
+#thought-form,
+#thought-edit-form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -371,7 +373,8 @@ footer {
 	margin: 100px 0 0 0;
 }
 
-#form-con {
+#form-con,
+#edit-form-con {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -386,26 +389,30 @@ footer {
 }
 
 #title-input,
-#content-input {
+#content-input,
+#title-edit-input,
+#content-edit-input {
 	font-family: "Inria Sans", sans-serif !important;
 	width: 1000px;
 	margin: 10px 0;
 }
 
-#title-input {
+#title-input,
+#title-edit-input {
 	height: 50px;
 	font-size: x-large;
 	padding-left: 10px;
 }
 
-#content-input {
+#content-input,
+#content-edit-input {
 	height: 450px;
 	margin-bottom: 20px;
 	font-size: large;
 	padding: 10px;
 }
 
-#thought-form > #form-con > .button-con > {
+#thought-form > #form-con > .button-con {
 	align-items: center !important;
 	justify-content: center !important;
 }
@@ -471,7 +478,7 @@ footer {
 	background: red;
 }
 
-#view-main > .button-con > a > button{
+#view-main > .button-con > a > button {
 	background: var(--accent1);
 }
 
