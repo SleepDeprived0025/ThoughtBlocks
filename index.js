@@ -15,16 +15,27 @@ const findPost = (id) => {
 	}
 };
 
-function handleViewClick(event) {
-	let id = event.target;
-	console.log(id);
-}
+const deletePost = (id) => {
+	for (let i = 0; i < thoughtArr.length; i++) {
+		if (thoughtArr[i].id == id) {
+			thoughtArr.splice(i, 1);
+		}
+	}
+};
+
+const updatePost = (id, title, content) => {
+	for (let i = 0; i < thoughtArr.length; i++) {
+		if (thoughtArr[i].id == id) {
+			thoughtArr[i].title = title;
+			thoughtArr[i].content = content;
+		}
+	}
+};
 
 const thoughtArr = [
 	{
 		title: "Welcome to Thoughtblocks",
-		content:
-			"A place where you can express the way you think",
+		content: "A place where you can express the way you think",
 		id: 1,
 	},
 	{
@@ -56,21 +67,30 @@ app.post("/create", (req, res) => {
 	thoughtArr.push({
 		title: req.body.title,
 		content: req.body.content,
-		id: thoughtArr[thoughtArr.length - 1].id + 1,
+		id: () => thoughtArr.length == {} ? 0 : thoughtArr[thoughtArr.length - 1].id + 1,
 	});
 	res.redirect("/thoughts");
 });
 
 app.post("/view", (req, res) => {
 	const targetPost = findPost(req.body.id);
-	console.log(targetPost);
 	res.render("view.ejs", { thought: targetPost });
 });
 
 app.post("/edit", (req, res) => {
 	const targetPost = findPost(req.body.id);
-	console.log(targetPost);
 	res.render("edit.ejs", { thought: targetPost });
+});
+
+app.post("/edit-post", (req, res) => {
+	updatePost(req.body.id, req.body.title, req.body.content);
+	res.redirect("/thoughts");
+});
+
+app.post("/delete", (req, res) => {
+	const targetPost = findPost(req.body.id);
+	deletePost(targetPost.id);
+	res.redirect("/thoughts");
 });
 
 app.listen(port, (req, res) => {
