@@ -227,7 +227,7 @@ footer {
 }
 
 #create-button,
-#sort-button {
+#edit-post-button {
 	font-size: 1.25rem;
 	margin-right: 2rem;
 	border: 0;
@@ -242,14 +242,14 @@ footer {
 }
 
 #create-button:hover,
-#sort-button:hover {
+#edit-post-button:hover {
 	outline: 6px ridge var(--background);
 	font-size: 1.5rem;
 	font-weight: 600;
 }
 
 #create-button,
-#sort-button,
+#edit-post-button,
 .post-btn {
 	cursor: pointer;
 }
